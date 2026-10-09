@@ -1,0 +1,883 @@
+/* =========================================================
+   SIDEBAR PETUGAS SITAFAS
+   VERSI PERBAIKAN
+   - Sidebar buka / tutup
+   - Main content ikut bergeser
+   - Mobile responsive
+   - Tampilan lama tetap dipertahankan
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --sidebar-width: 250px;
+
+    --sidebar-bg: linear-gradient(
+        145deg,
+        #FF8A00 0%,
+        #FE9D2A 40%,
+        #F9DA00 100%
+    );
+    --sidebar-hover: #0b6880;
+    --sidebar-active: #cd7408;
+
+    --content-gap: 28px;
+    --content-left-gap: 35px;
+    --content-right-gap: 35px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: #f4f8fb;
+
+    overflow-x: hidden;
+
+    transition:
+        background var(--transition);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: var(--sidebar-bg);
+
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 2000;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-shadow:
+        3px 0 15px rgba(0, 0, 0, 0.10);
+
+    transition:
+        width var(--transition),
+        transform var(--transition);
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+========================================================= */
+
+.sidebar-brand {
+
+    min-height: 170px;
+
+    padding: 25px 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.10);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+
+    width: 60px;
+    min-width: 60px;
+
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sidebar-logo img {
+
+    width: 110%;
+    height: 110%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.sidebar-brand-text {
+
+    min-width: 0;
+}
+
+
+.brand-name {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+.brand-description {
+
+    margin-top: 7px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: rgba(255,255,255,0.85);
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+.sidebar-nav {
+
+    flex: 1;
+
+    padding: 28px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.sidebar-menu {
+
+    width: 100%;
+
+    min-height: 60px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    border-radius: 17px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+
+.sidebar-menu i {
+
+    width: 30px;
+
+    font-size: 15px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MENU HOVER
+========================================================= */
+
+.sidebar-menu:hover {
+
+    background:
+        rgba(255,255,255,0.10);
+
+    transform:
+        translateX(1px);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MENU ACTIVE
+========================================================= */
+
+.sidebar-menu.active {
+
+    background:
+        var(--sidebar-active);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.10);
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    padding: 25px 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.10);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.sidebar-user {
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+.sidebar-user-icon {
+
+    width: 50px;
+    min-width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    font-size: 18px;
+}
+
+
+.sidebar-user-info {
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.sidebar-user-info strong {
+
+    font-size: 15px;
+
+    white-space: nowrap;
+    font-weight: 800;
+    overflow: hidden ;
+
+    text-overflow: ellipsis;
+}
+
+
+.sidebar-user-info span {
+
+    font-size: 12px;
+    font-weight: 700;
+    color:
+        rgba(255,255,255,0.70);
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-logout {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+    font-weight: 600;
+    padding: 13px 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        background var(--transition);
+}
+
+
+.sidebar-logout i {
+
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+
+.sidebar-logout:hover {
+
+    background:
+        rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   SIDEBAR TERBUKA
+========================================================= */
+
+.main-content {
+
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+
+    width:
+        calc(100% - var(--sidebar-width));
+
+    padding:
+        28px
+        var(--content-right-gap)
+        40px
+        var(--content-left-gap);
+
+    transition:
+        margin-left var(--transition),
+        width var(--transition),
+        padding var(--transition);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR DITUTUP
+   DESKTOP
+========================================================= */
+
+body.sidebar-closed .sidebar {
+
+    width: 0;
+
+    transform:
+        translateX(-100%);
+
+    box-shadow: none;
+}
+
+
+body.sidebar-closed .main-content {
+
+    margin-left: 0;
+
+    width: 100%;
+
+    padding-left: 85px;
+
+    padding-right: 40px;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTAINER
+========================================================= */
+
+.dashboard-container {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   DASHBOARD CARD
+========================================================= */
+
+.dashboard-card,
+.stat-card,
+.welcome-card {
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+   ID:
+   mobileMenuButton
+========================================================= */
+
+.mobile-menu-button {
+
+    width: 64px;
+
+    height: 64px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #07566b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.mobile-menu-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        #eef8fc;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* =========================================================
+   SIDEBAR TOGGLE LAMA
+   Tetap dipertahankan supaya tidak merusak halaman lain
+========================================================= */
+
+.sidebar-toggle {
+
+    position: fixed;
+
+    top: 25px;
+
+    left:
+        calc(var(--sidebar-width) + 25px);
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #07566b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    z-index: 2500;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    transition:
+        left var(--transition),
+        background var(--transition),
+        transform var(--transition);
+}
+
+
+.sidebar-toggle:hover {
+
+    transform:
+        translateY(-1px);
+
+    background:
+        #eef8fc;
+}
+
+
+body.sidebar-closed .sidebar-toggle {
+
+    left: 25px;
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.40);
+
+    z-index: 1900;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    :root {
+
+        --sidebar-width: 230px;
+    }
+
+
+    .main-content {
+
+        padding-left: 28px;
+
+        padding-right: 28px;
+    }
+
+
+    body.sidebar-closed .main-content {
+
+        padding-left: 75px;
+
+        padding-right: 35px;
+    }
+
+
+    .sidebar-toggle {
+
+        left:
+            calc(var(--sidebar-width) + 15px);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   <= 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /*
+     * Pada tablet/mobile sidebar menjadi overlay.
+     * Main content tetap memenuhi layar.
+     */
+
+    .sidebar {
+
+        width: var(--sidebar-width);
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform var(--transition);
+
+        box-shadow:
+            5px 0 20px rgba(0,0,0,0.15);
+    }
+
+
+    /* =====================================================
+       SIDEBAR TERBUKA
+    ===================================================== */
+
+    .sidebar.open {
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+    ===================================================== */
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            85px
+            25px
+            30px
+            25px;
+
+        transition:
+            width var(--transition),
+            padding var(--transition);
+    }
+
+
+    /*
+     * Ketika body masih punya sidebar-closed,
+     * jangan biarkan margin desktop masuk ke mobile.
+     */
+
+    body.sidebar-closed .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            85px
+            25px
+            30px
+            25px;
+    }
+
+
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+    .mobile-menu-button {
+
+        width: 52px;
+
+        height: 52px;
+
+        border-radius: 14px;
+
+        font-size: 24px;
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    body.sidebar-open .sidebar-overlay {
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .sidebar-brand {
+
+        padding:
+            20px 18px;
+    }
+
+
+    .brand-name {
+
+        font-size: 24px;
+    }
+
+
+    .brand-description {
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       MENU
+    ===================================================== */
+
+    .sidebar-menu {
+
+        min-height: 55px;
+
+        font-size: 17px;
+
+        padding:
+            0 18px;
+    }
+
+
+    /* =====================================================
+       USER
+    ===================================================== */
+
+    .sidebar-bottom {
+
+        padding:
+            20px 18px;
+    }
+
+
+    /* =====================================================
+       TOGGLE LAMA
+    ===================================================== */
+
+    .sidebar-toggle {
+
+        top: 18px;
+
+        left: 18px;
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+
+    body.sidebar-closed .sidebar-toggle {
+
+        left: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE KECIL
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+
+        width: 240px;
+    }
+
+
+    .main-content {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    body.sidebar-closed .main-content {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+}

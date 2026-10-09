@@ -1,0 +1,1397 @@
+/* =====================================================
+   SITAFAS - KELOLA TIKET
+   CSS LENGKAP
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f4f8fb;
+    color: #0d4268;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+
+    transition:
+        margin-left 0.3s ease,
+        width 0.3s ease;
+}
+
+
+/* =====================================================
+   PAGE CONTAINER
+===================================================== */
+
+.page-container {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 25px 32px 40px;
+
+    transition: width 0.3s ease,
+                margin 0.3s ease;
+}
+
+
+/* =====================================================
+   SIDEBAR CLOSED
+===================================================== */
+
+body.sidebar-closed .main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+body.sidebar-closed .page-container {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.page-header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+    min-width: 0;
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.hamburger-btn {
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: #ffffff;
+    color: #07557c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(15, 73, 105, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hamburger-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 73, 105, 0.13);
+}
+
+.hamburger-btn i {
+    font-size: 32px;
+    color: #07557c;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination-wrapper {
+    width: 100%;
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top: 1px solid #e5edf3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* INFO */
+
+.pagination-info {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    color: #7891a3;
+
+    white-space: nowrap;
+}
+
+.pagination-info strong {
+    color: #17466d;
+
+    font-weight: 700;
+}
+
+
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* PAGE BUTTON */
+
+.page-btn {
+    min-width: 38px;
+    height: 38px;
+
+    padding: 0 11px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f3f7fa;
+
+    color: #52738a;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    border: 1px solid #e2ebf0;
+
+    transition: all 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* HOVER */
+
+.page-btn:hover {
+    background: #e8f5fa;
+
+    color: #0b91c5;
+
+    border-color: #b9ddea;
+
+    transform: translateY(-1px);
+}
+
+
+/* ACTIVE */
+
+.page-btn.active {
+    background: #0b91c5;
+
+    color: #ffffff;
+
+    border-color: #0b91c5;
+
+    box-shadow: 0 4px 10px rgba(11, 145, 197, 0.20);
+
+    cursor: default;
+}
+
+
+/* DISABLED */
+
+.page-btn.disabled {
+    background: #f5f7f8;
+
+    color: #c1ccd3;
+
+    border-color: #e8edf0;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+
+/* ICON */
+
+.page-btn i {
+    font-size: 11px;
+}
+
+
+
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   FORM HAPUS
+========================================================= */
+
+.delete-ticket-form {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BUTTON HAPUS
+========================================================= */
+
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #fee2e2;
+    color: #dc2626;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.btn-delete:hover {
+    background: #dc2626;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+.btn-delete i {
+    font-size: 14px;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.page-title-wrapper {
+    min-width: 0;
+}
+
+.page-title {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #0b4269;
+}
+
+.page-subtitle {
+    margin: 8px 0 0;
+
+    font-size: 17px;
+    color: #7899b4;
+}
+
+
+/* =====================================================
+   HEADER USER
+===================================================== */
+
+.header-user {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.header-user-icon {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #dff3fb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-user-icon i {
+    font-size: 27px;
+    color: #0789bc;
+}
+
+.header-user-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.header-user-info strong {
+    font-size: 18px;
+    color: #0b4269;
+    font-weight: 700;
+}
+
+.header-user-info span {
+    font-size: 14px;
+    color: #7696b0;
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.alert {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 14px 18px;
+    margin-bottom: 22px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition:
+        all 0.3s ease;
+}
+
+.alert-success {
+    background: #eaf8f0;
+    color: #26734d;
+
+    border: 1px solid #cceedd;
+}
+
+.alert-danger {
+    background: #fff0f0;
+    color: #a64242;
+
+    border: 1px solid #f1d0d0;
+}
+
+
+/* =====================================================
+   DATA CARD
+===================================================== */
+
+.data-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(20, 70, 100, 0.07);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.content-header {
+    min-height: 145px;
+
+    padding: 36px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom: 1px solid #e4edf3;
+}
+
+.header-text h2 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #0d4268;
+}
+
+.header-text p {
+    margin: 7px 0 0;
+
+    font-size: 16px;
+
+    color: #7c9bb4;
+}
+
+
+/* =====================================================
+   EXPORT BUTTON
+===================================================== */
+
+.btn-export {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 56px;
+
+    padding: 0 24px;
+
+    border-radius: 13px;
+
+    background: #168fbe;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+
+    white-space: nowrap;
+}
+
+.btn-export:hover {
+    background: #087eaa;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1.5fr)
+        minmax(200px, 0.8fr)
+        minmax(200px, 0.8fr);
+
+    gap: 16px;
+
+    padding: 28px 40px;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d8e7ef;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: #168fbe;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 143, 190, 0.08);
+}
+
+.search-box i {
+    font-size: 20px;
+    color: #7ba4be;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+
+    color: #164e70;
+}
+
+.search-box input::placeholder {
+    color: #9ab2c3;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.status-filter {
+    width: 100%;
+}
+
+.status-filter select {
+    width: 100%;
+
+    height: 58px;
+
+    padding: 0 17px;
+
+    border: 1px solid #d8e7ef;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #164e70;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.status-filter select:focus {
+    border-color: #168fbe;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 143, 190, 0.08);
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.table-wrapper {
+    width: calc(100% - 80px);
+
+    margin: 0 40px 30px;
+
+    overflow-x: auto;
+
+    border: 1px solid #dce8ef;
+    border-radius: 15px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.data-table {
+    width: 100%;
+
+    min-width: 950px;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+}
+
+.data-table thead {
+    background: #f1f7fa;
+}
+
+.data-table th {
+    padding: 19px 16px;
+
+    text-align: left;
+
+    color: #5d809a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #dce8ef;
+}
+
+.data-table td {
+    padding: 18px 16px;
+
+    color: #315d79;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #edf2f5;
+
+    vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background: #f9fcfd;
+}
+
+
+/* =====================================================
+   TICKET NUMBER
+===================================================== */
+
+.ticket-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 75px;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    background: #eaf6fb;
+
+    color: #087eaa;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   NAME / PERGURUAN TINGGI
+===================================================== */
+
+.name-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 210px;
+}
+
+.name-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 9px;
+
+    background: #eaf6fb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-icon i {
+    font-size: 16px;
+    color: #168fbe;
+}
+
+.name-content {
+    min-width: 0;
+}
+
+.name-content strong {
+    display: inline-block;
+
+    max-width: 220px;
+
+    color: #164e70;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.name-content small {
+    color: #8aa5b8;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   DATE / TIME
+===================================================== */
+
+.date-wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    white-space: nowrap;
+}
+
+.date-wrapper span {
+    color: #315d79;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+.date-wrapper small {
+    color: #91aabd;
+
+    font-size: 11px;
+}
+
+.empty-time {
+    color: #b2c2cc;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   STATUS BADGE
+===================================================== */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+/* =====================================================
+   STATUS 1
+   MENUNGGU
+===================================================== */
+
+.status-waiting {
+    background: #fff7e6;
+    color: #c77b08;
+
+    border: 1px solid #f7dfae;
+}
+
+.status-waiting .status-dot {
+    background: #f59e0b;
+}
+
+
+/* =====================================================
+   STATUS 2
+   DIPANGGIL
+===================================================== */
+
+.status-called {
+    background: #eaf5ff;
+    color: #1976d2;
+
+    border: 1px solid #cde6fa;
+}
+
+.status-called .status-dot {
+    background: #2196f3;
+}
+
+
+/* =====================================================
+   STATUS 3
+   DILEWAT
+===================================================== */
+
+.status-skipped {
+    background: #f0eafa;
+    color: #7b61b5;
+    min-width: 95px;
+}
+
+.status-skipped .status-dot {
+    background: #7b61b5;
+}
+
+
+/* =====================================================
+   STATUS 4
+   SELESAI
+===================================================== */
+
+.status-completed {
+    background: #eaf8ef;
+    color: #2f8751;
+
+    border: 1px solid #ccebd8;
+}
+
+.status-completed .status-dot {
+    background: #22c55e;
+}
+
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.btn-action {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-view {
+    background: #e9f5fb;
+    color: #087eaa;
+}
+
+.btn-view:hover {
+    background: #d5edf7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TABLE FOOTER
+===================================================== */
+
+.table-footer {
+    padding: 0 40px 28px;
+
+    color: #8aa5b8;
+
+    font-size: 13px;
+}
+
+.data-count strong {
+    color: #0d4268;
+}
+
+
+/* =====================================================
+   EMPTY DATA
+===================================================== */
+
+.empty-data {
+    text-align: center !important;
+
+    padding: 70px 20px !important;
+
+    color: #91aabd !important;
+}
+
+.empty-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-content i {
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9f7fc;
+
+    color: #46add1;
+
+    font-size: 30px;
+}
+
+.empty-content p {
+    margin: 0;
+
+    color: #155174;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.empty-content small {
+    margin-top: 7px;
+
+    color: #91aabd;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(5, 38, 57, 0.45);
+
+    z-index: 999;
+}
+
+.sidebar-overlay.show,
+.sidebar-overlay.active {
+    display: block;
+}
+
+
+/* =====================================================
+   ALERT HIDE
+===================================================== */
+
+.alert.hide {
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        margin-left: 250px;
+
+        width: calc(100% - 250px);
+    }
+
+    body.sidebar-closed .main-content {
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+    }
+
+    .page-container {
+        padding: 28px 30px 45px;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+
+    .page-subtitle {
+        font-size: 15px;
+    }
+
+    .header-user-info strong {
+        font-size: 16px;
+    }
+
+    .header-user-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .content-header {
+        padding: 30px;
+    }
+
+    .filter-section {
+        padding: 25px 30px;
+    }
+
+    .table-wrapper {
+        width: calc(100% - 60px);
+
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .table-footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+/* =====================================================
+   TABLET 850px
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .page-header {
+        gap: 15px;
+    }
+
+    .header-user {
+        margin-left: 10px;
+    }
+
+    .header-user-info {
+        display: none;
+    }
+
+    .content-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 25px;
+    }
+
+    .btn-export {
+        align-self: flex-start;
+    }
+
+    .filter-section {
+        grid-template-columns: 1fr;
+
+        padding: 22px 25px;
+    }
+
+    .table-wrapper {
+        width: calc(100% - 50px);
+
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .main-content,
+    body.sidebar-closed .main-content {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    .page-container,
+    body.sidebar-closed .page-container {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 20px 16px 35px;
+    }
+
+    .page-header {
+        min-height: auto;
+
+        margin-bottom: 22px;
+
+        justify-content: flex-start;
+    }
+
+    .page-header-left {
+        width: 100%;
+
+        gap: 13px;
+    }
+
+    .hamburger-btn {
+        width: 52px;
+        height: 52px;
+
+        min-width: 52px;
+
+        border-radius: 13px;
+    }
+
+    .hamburger-btn i {
+        font-size: 23px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .page-subtitle {
+        font-size: 13px;
+
+        margin-top: 4px;
+    }
+
+    .header-user {
+        display: none;
+    }
+
+    .data-card {
+        border-radius: 16px;
+    }
+
+    .content-header {
+        padding: 22px 20px;
+    }
+
+    .header-text h2 {
+        font-size: 22px;
+    }
+
+    .header-text p {
+        font-size: 13px;
+    }
+
+    .btn-export {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .filter-section {
+        padding: 18px 20px;
+
+        gap: 12px;
+    }
+
+    .search-box {
+        height: 52px;
+    }
+
+    .status-filter select {
+        height: 52px;
+    }
+
+    .table-wrapper {
+        width: calc(100% - 40px);
+
+        margin-left: 20px;
+        margin-right: 20px;
+
+        overflow-x: auto;
+    }
+
+    .table-footer {
+        padding: 0 20px 22px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .page-subtitle {
+        font-size: 11px;
+    }
+
+    .hamburger-btn {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+    }
+
+    .hamburger-btn i {
+        font-size: 20px;
+    }
+
+    .ticket-number {
+        min-width: 65px;
+
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+    .status-badge {
+        padding: 6px 9px;
+
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .pagination-wrapper {
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .pagination-info {
+        text-align: center;
+
+        font-size: 12px;
+    }
+
+    .pagination {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        min-width: 35px;
+
+        height: 35px;
+
+        font-size: 12px;
+    }
+
+}

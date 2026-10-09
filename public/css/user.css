@@ -1,0 +1,1481 @@
+/* =====================================================
+   SITAFAS - KELOLA USER
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    background: #f4f7fa;
+
+    color: #18324a;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    margin-left: 230px;
+    min-height: 100vh;
+    padding: 40px 36px;
+    background: #f4f7fa;
+    transition: margin-left 0.25s ease;
+}
+
+/* =====================================================
+   SIDEBAR DITUTUP
+===================================================== */
+
+body.sidebar-closed .main-content {
+
+    margin-left: 0;
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 20px;
+    transform: translateY(20px);
+}
+
+
+.hamburger-btn {
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    color: #083b52;
+    font-size: 30px;
+    transition: 0.2s ease;
+}
+
+
+.hamburger-btn:hover {
+    background: #168bc0;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.page-title {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #16344d;
+}
+
+
+.page-subtitle {
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+    color: #71818e;
+}
+
+
+/* =====================================================
+   HEADER USER
+===================================================== */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transform: translateY(25px);
+    margin-right: 30px;
+}
+
+
+.header-user-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #dceff6;
+
+    color: #08769e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+
+.header-user strong,
+.header-user span {
+    display: block;
+}
+
+
+.header-user strong {
+    font-size: 14px;
+}
+
+
+.header-user span {
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #7d8d99;
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.alert {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+
+.alert-success {
+    background: #e7f7ee;
+
+    color: #197344;
+}
+
+
+.alert-error {
+    background: #fdecec;
+
+    color: #b63232;
+}
+
+
+/* =====================================================
+   CONTENT CARD
+===================================================== */
+
+.content-card {
+    background: #ffffff;
+    transform: translateY(25px);
+    border-radius: 13px;
+
+    border: 1px solid #e7edf2;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.content-card-header {
+    padding: 23px 25px;
+    
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #edf1f4;
+}
+
+
+.content-card-header h2 {
+    margin: 0;
+    
+    font-size: 19px;
+
+    color: #183b53;
+}
+
+
+.content-card-header p {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    color: #81909b;
+}
+
+
+/* =====================================================
+   BUTTON PRIMARY
+===================================================== */
+
+.btn-primary {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 17px;
+
+    border-radius: 8px;
+
+    background: #168bc0;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.btn-primary:hover {
+    background: #117ba9;
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 25px;
+
+    background: #fafcfd;
+
+    border-bottom: 1px solid #edf1f4;
+}
+
+
+.search-box {
+    position: relative;
+
+    flex: 1;
+
+    max-width: 450px;
+}
+
+
+.search-box i {
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9aa8b1;
+
+    font-size: 14px;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 15px 0 38px;
+
+    border: 1px solid #dce5ea;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    color: #18324a;
+}
+
+
+.search-box input:focus {
+    border-color: #168bc0;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 139, 192, 0.08);
+}
+
+
+.filter-select {
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dce5ea;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #526b7a;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.user-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+
+.user-table thead {
+    background: #f7fafb;
+}
+
+
+.user-table th {
+    padding: 14px 18px;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    letter-spacing: 0.5px;
+
+    color: #71838f;
+
+    border-bottom: 1px solid #e7edf1;
+}
+
+
+.user-table td {
+    padding: 16px 18px;
+
+    font-size: 13px;
+
+    color: #536b7b;
+
+    border-bottom: 1px solid #edf1f4;
+}
+
+
+.user-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+
+.user-table tbody tr:hover {
+    background: #fafcfd;
+}
+
+
+/* =====================================================
+   USER INFO
+===================================================== */
+
+.user-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.user-avatar {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 50%;
+
+    background: #dceff6;
+
+    color: #08769e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+.user-info strong,
+.user-info span {
+    display: block;
+}
+
+
+.user-info strong {
+    font-size: 13px;
+
+    color: #24465b;
+}
+
+
+.user-info span {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #8998a2;
+}
+
+
+/* =====================================================
+   ROLE BADGE
+===================================================== */
+
+.role-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.role-badge.admin {
+    background: #fff2d9;
+
+    color: #a66b00;
+}
+
+
+.role-badge.petugas {
+    background: #e4f3f8;
+
+    color: #08769e;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+.status-badge span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+}
+
+
+.status-badge.active {
+    color: #21804e;
+}
+
+
+.status-badge.active span {
+    background: #35b96f;
+}
+
+
+.status-badge.inactive {
+    color: #9a6464;
+}
+
+
+.status-badge.inactive span {
+    background: #c47b7b;
+}
+
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.action-buttons form {
+    margin: 0;
+}
+
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+
+.action-btn.edit {
+    background: #e8f4f8;
+
+    color: #08769e;
+}
+
+
+.action-btn.edit:hover {
+    background: #d6edf4;
+}
+
+
+.action-btn.status {
+    background: #fff4df;
+
+    color: #a56b00;
+}
+
+
+.action-btn.status:hover {
+    background: #ffeac2;
+}
+
+
+.action-btn.delete {
+    background: #fdeaea;
+
+    color: #bd4545;
+}
+
+
+.action-btn.delete:hover {
+    background: #f9dada;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-data {
+    text-align: center !important;
+
+    padding: 50px !important;
+
+    color: #8c9ba5 !important;
+}
+
+
+.empty-data i {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-data p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+    padding: 18px 25px;
+
+    border-top: 1px solid #edf1f4;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 22px;
+    }
+
+    .filter-area {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        max-width: 100%;
+
+        flex-basis: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .page-title {
+        font-size: 22px;
+        transform: translateY(8px);
+    }
+
+    .page-subtitle {
+        font-size: 12px;
+    }
+
+    .header-user {
+        display: none;
+    }
+
+    .content-card-header {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+/* =====================================================
+   FORM TAMBAH USER
+===================================================== */
+
+.user-form-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e6edf2;
+    box-shadow:
+        0 8px 25px rgba(18, 59, 93, 0.06);
+    transform: translateY(25px);
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.user-form-header {
+    padding: 27px 38px;
+
+    border-bottom: 1px solid #edf1f4;
+}
+
+
+.user-form-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #123b5d;
+}
+
+
+.user-form-header p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+
+    color: #7890a4;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.user-form-card form {
+    padding: 32px 38px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px 30px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: column;
+}
+
+
+.form-group label {
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #284c67;
+}
+
+
+.form-group label span {
+    color: #d9534f;
+}
+
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.input-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.input-wrapper > i {
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8aa1b2;
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #d8e3ea;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    padding: 0 16px 0 45px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    color: #284c67;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+
+.input-wrapper select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+
+    border-color: #168bc0;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 139, 192, 0.10);
+
+}
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #8aa1b2;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+.password-toggle:hover {
+    color: #168bc0;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+
+    margin-top: 6px;
+
+    color: #d9534f;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   FORM ACTION
+===================================================== */
+
+.form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #edf1f4;
+}
+
+
+/* =====================================================
+   BUTTON KEMBALI
+===================================================== */
+
+.btn-cancel {
+
+    height: 45px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 8px;
+
+    border: 1px solid #d8e3ea;
+
+    background: #ffffff;
+
+    color: #607d91;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+
+.btn-cancel:hover {
+
+    background: #f3f7f9;
+
+    color: #284c67;
+}
+
+
+/* =====================================================
+   BUTTON SIMPAN
+===================================================== */
+
+.btn-save {
+
+    height: 45px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #168bc0;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.btn-save:hover {
+
+    background: #117ba9;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(22, 139, 192, 0.20);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .page-header {
+
+        padding: 20px;
+
+    }
+
+
+    .page-header-user {
+
+        display: none;
+
+    }
+
+
+    .page-header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+
+    .hamburger-btn {
+
+        width: 56px;
+
+        height: 56px;
+
+    }
+
+
+    .hamburger-btn i {
+
+        font-size: 25px;
+
+    }
+
+
+    .page-title {
+
+        font-size: 30px;
+
+    }
+
+
+    .page-subtitle {
+
+        font-size: 15px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .user-form-header {
+        border-bottom: 1px solid #e8eef2;
+        padding: 22px;
+
+    }
+
+
+    .user-form-card form {
+
+        padding: 22px;
+
+    }
+
+
+    .form-actions {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+    }
+
+
+    .btn-cancel,
+    .btn-save {
+
+        width: 100%;
+
+    }
+
+}
+
+.user-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 20px 56px;
+
+    border-top: 1px solid #e5edf2;
+}
+
+
+/* TOMBOL KEMBALI */
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+    height: 48px;
+
+    padding: 0 24px;
+
+    border: 1px solid #d5e1e8;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #527087;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-cancel:hover {
+    background: #f3f7f9;
+
+    color: #083b52;
+}
+
+
+/* TOMBOL SIMPAN */
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+    height: 48px;
+
+    padding: 0 24px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #168bc0;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-submit:hover {
+    background: #1179a8;
+
+    box-shadow: 0 4px 10px rgba(22, 139, 192, 0.25);
+}
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.alert {
+    width: 100%;
+
+    min-height: 55px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    animation: alertSlide 0.3s ease;
+}
+
+
+/* SUCCESS */
+
+.alert-success {
+    background: #e8f8ef;
+
+    border: 1px solid #b8e8cb;
+
+    color: #167a42;
+}
+
+.alert-success > i {
+    font-size: 20px;
+}
+
+
+/* ERROR */
+
+.alert-error {
+    background: #fdecec;
+
+    border: 1px solid #f2bcbc;
+
+    color: #b42318;
+}
+
+.alert-error > i {
+    font-size: 20px;
+}
+
+
+/* CLOSE */
+
+.alert-close {
+    margin-left: auto;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+.alert-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+
+/* ANIMATION */
+
+@keyframes alertSlide {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================================================
+   LAYOUT FINAL - SIDEBAR + MAIN CONTENT
+   Sidebar diatur oleh sidebar.css.
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 993px) {
+
+    main.main-content {
+        margin-left: 230px !important;
+        width: calc(100% - 230px) !important;
+        min-height: 100vh;
+        box-sizing: border-box;
+
+        transition:
+            margin-left 0.3s ease,
+            width 0.3s ease;
+    }
+
+    body.sidebar-closed main.main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    main.main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    body.sidebar-closed main.main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.mobile-menu-button,
+.sidebar-toggle {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-menu-button,
+    .sidebar-toggle {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .mobile-menu-button,
+    .sidebar-toggle {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* =========================================================
+   CATATAN:
+   Jangan definisikan .sidebar, transform sidebar,
+   atau body.sidebar-closed .sidebar di user.css.
+   Semua pengaturan sidebar berasal dari sidebar.css.
+========================================================= */
